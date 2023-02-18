@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu UI-UX</title>
+</head>
+<body>
+    <header>
+        <div class="container menu">
+            <div class="box_desktop">
+                <a class="logo_desktop" href="index.html"><i class="fa-brands fa-rebel"></i></a>
+                <nav class="nav_desktop">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav><!--nav_desktop-->
+            </div><!--logo_desktop-->
+
+            <div class="box_mobile">
+                <a class="hamburguer" href="#"><i class="fa fa-bars"></i></a>
+                <a class="logo_mobile" href="index.html"><i class="fa-brands fa-rebel"></i></a>
+                <nav class="mobile">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div><!--box_mobile-->
+        </div><!--container menu-->
+    </header>
+
+<script src="https://kit.fontawesome.com/e7bc86cff2.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    $('.box_mobile .hamburguer').click(function(){
+        $('nav.mobile ul').slideToggle();
+    });
+    //quando usuário clica no elemento .hamburguer, executa a função anônima, 
+    //que aplica o efeito slide.toggle na lista <ul>
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    max-width: 960px;
+    padding: 0.2%;
+    margin: 0 auto;
+}
+
+/*--------Menu Desktop----------*/
+/*Dentro da tag <header> temos uma <box_desktop> que contém a logomarca 
+e a tag <nav> com os links do menu em forma de lista não ordenada <ul> <li>.
+Usaremos essa box_desktop com display flex para separar a logo à esquerda e os links à direita com o
+"justify-content:space-between".
+A lista <ul> será também uma 'flex-box' para alinhar e centralizar corretamente os links.
+*/
+
+header{
+    background: #333;
+    padding: 4px 0;
+}
+
+    .box_desktop{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px; 
+    }
+
+        .logo_desktop{
+            color: white;
+        }
+            .logo_desktop a{
+                color: white;
+                font-size: 18px;
+            }
+
+        .nav_desktop{
+            display: inline-block;
+            padding: 0 15px;
+        }
+            .nav_desktop ul{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+            .nav_desktop li{
+                list-style: none;
+            }
+            .nav_desktop a{
+                color: white;
+                text-decoration: none;
+            }
+            .nav_desktop a:hover{
+                text-decoration: underline;
+            }
+
+/*--------Menu Mobile----------*/
+/*Vamos deixar para configurar o menu mobile na media query.
+A princípio, a box_mobile deve ter "display: none" para que só apareça na resolução correta "max-width:768px".
+Dentro da media query passar display do menu desktop para none.
+Teremos uma box_mobile que contém a logomarca e a tag <nav> com os links do menu. Ela será uma flex_box para
+separar o menu hamburguer à esquerda, a logo no centro e os links à direita com "justify-content:space-between".
+A lista não ordenada <ul> deverá ter "position: absolut" e ser posicionada com top e left, além de usar o
+text align:center, caso deseje que os links fiquem centralizados.
+A <ul> terá um "display:none" como padrão, (para que a página seja carregada com esse elemento oculto) que será alterado com o uso do jquery com a propriedade toggle.
+*/
+.box_mobile{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .logo_desktop, .nav_desktop{
+        display: none;
+    }
+
+    .box_mobile{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+        .hamburguer,.logo_mobile{
+            color: white;
+            cursor: pointer;
+        }
+
+        nav.mobile ul{
+            display: none;
+            background: #333;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            left: 0;
+            top: 29px;
+        }
+        nav.mobile li{
+            list-style: none;
+            padding: 8px 0;
+            border-top: 1px solid white;
+        }
+
+        nav.mobile a{
+            color: white;
+            text-decoration: none;
+        }
+
+}
